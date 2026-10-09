@@ -8,6 +8,10 @@ where TContext: struct
     private TContext context;
     private TStateType stateId;
     public event Action<TStateType> ChangeStateEvent;
+    public void InvokeChangeStateEvent(TStateType nextStateId)
+    {
+        ChangeStateEvent?.Invoke(nextStateId);
+    }
     
     public TContext Context => context;
     public TStateType StateId => stateId;
@@ -17,14 +21,14 @@ where TContext: struct
         this.context = context;
     }
     
-    public void Enter() {}
-    public void Exit() {}
-    public void Update(){}
-    public void FixedUpdate(){}
-    public void OnCollisionEnter2D(Collision2D collision){} 
-    public void OnCollisionStay2D(Collision2D collision){}
-    public void OnCollisionExit2D(Collision2D collision){}
-    public void OnTriggerEnter2D(Collider2D collision){}
-    public void OnTriggerStay2D(Collider2D collision){}
-    public void OnTriggerExit2D(Collider2D collision){}
+    public virtual void Enter() {}
+    public virtual void Exit() {}
+    public virtual void Update(){}
+    public virtual void FixedUpdate(){}
+    public virtual void OnCollisionEnter2D(Collision2D collision){} 
+    public virtual void OnCollisionStay2D(Collision2D collision){}
+    public virtual void OnCollisionExit2D(Collision2D collision){}
+    public virtual void OnTriggerEnter2D(Collider2D collision){}
+    public virtual void OnTriggerStay2D(Collider2D collision){}
+    public virtual void OnTriggerExit2D(Collider2D collision){}
 }

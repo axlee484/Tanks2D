@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62db4514941cf3c6913f460108f970c, type: 3}
+  m_Name: Regice
+  m_EditorClassIdentifier: Assembly-CSharp::Turret
+  turretPrefab: {fileID: 0}
+  ammoData: {fileID: 11400000, guid: dde07c989274c96718da37ce97aa31e6, type: 2}
+  turretType: 2
+  ammoType: 2
+  baseDamage: 100
+  range: 10000
+  fireRate: 1
+  speed: 100
+  reloadTime: 2
+  magazineSize: 5

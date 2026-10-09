@@ -9,7 +9,11 @@ where TContext: struct
     private BaseState<TStateType, TContext> currentState;
     private Dictionary<TStateType, BaseState<TStateType, TContext>> states = new();
     public abstract Dictionary<TStateType, BaseState<TStateType, TContext>> CreateStates();
-    public void Initialize()
+    private void Start()
+    {
+        Initialize();
+    }
+    public virtual void Initialize()
     {
         states = CreateStates();
         foreach (var state in states.Values)
@@ -23,6 +27,14 @@ where TContext: struct
     public void StartStateMachine()
     {
         currentState.Enter();
+    }
+    private void Update()
+    {
+        currentState.Update();
+    }
+    private void FixedUpdate()
+    {
+        currentState.FixedUpdate();
     }
     private void OnChangeState(TStateType nextStateId)
     {
